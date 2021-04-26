@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="card text-center">
+    <div class="card-header text-center text-uppercase">
+      Calculator
+    </div>
+    <div class="card-body">
+      <div class="form-group d-flex flex-row">
+        <input 
+        [(ngModel)]='num1'
+         type="text" name="num1"
+         class="form-control"
+         ngModel pattern="/^-?\d*[.]?\d*$/">
+        <input 
+        [(ngModel)]='num2' 
+        type="text" name="num2"
+        class="form-control"
+         ngModel pattern="/^-?\d*[.]?\d*$/">
+      </div>
+      <div class="d-flex flex-row justify-content-between">
+       <button class=" btn btn-success" (click)="sum()">Sum</button>
+       <button class="btn btn-primary" (click)="sub()">sub</button>
+       <button class=" btn btn-danger" (click)="multi()">Multi</button>
+       <button class="btn btn-warning" (click)="div()">Div</button>
+      </div>
+    </div>
+    <div class="card-footer" *ngIf="result!=null">
+      result of {{num1}} and {{num2}} is {{result}}
+    </div>
+  </div>
+</div>
